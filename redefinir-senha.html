@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Redefinir Senha</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black; 
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #333;
+  }
+  .container {
+    background: white;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    width: 360px;
+    text-align: center;
+  }
+  h2 {
+    color: #4b2979;
+    margin-bottom: 1.5rem;
+  }
+  p {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    color: #555;
+  }
+  input[type="email"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  input[type="email"]:focus {
+    border-color: #764ba2;
+    outline: none;
+  }
+  button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: #764ba2;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #5e3777;
+  }
+  .back-link {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+  }
+  .back-link a {
+    color: #764ba2;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  .back-link a:hover {
+    color: #5e3777;
+    text-decoration: underline;
+  }
+  .message {
+    margin-top: 1rem;
+    color: green;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+     <!-- Logo -->
+                <div class="col-lg-3">
+                   <img src="https://img.freepik.com/vetores-premium/logotipo-do-smartphone-eletronicos-modernos-vector-design-de-loja-de-smartphones-artigos-eletronicos_557439-6879.jpg" alt="logo" width="200" height="120">
+                </div>
+    <h2>Redefinir Senha</h2>
+    <p>Insira seu email para receber um link de redefinição de senha.</p>
+    <form id="resetForm">
+      <input type="email" id="email" placeholder="Seu email" required />
+      <button type="submit">Enviar link</button>
+    </form>
+    <div class="message" id="message"></div>
+    <div class="back-link">
+      <a href="login.html">&larr; Voltar para login</a>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('resetForm');
+    const messageDiv = document.getElementById('message');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = form.email.value.trim();
+
+      if(email) {
+        // Simula envio do link
+        messageDiv.textContent = 'Link de redefinição enviado para ' + email + '. Verifique seu email.';
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
+
